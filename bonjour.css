@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(ellipse at center, rgb(255, 254, 234) 0%, rgb(255, 254, 234) 35%, #B7E8EB 100%);
+  overflow: hidden;
+  background: #2f3136;
+}
+
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+          animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+          animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+@-webkit-keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+.btn {
+  font-family: "Fira Sans", sans-serif;
+  width: 460px;
+  height: 130px;
+  border: 3px solid #42464d;
+  border-radius: 0px;
+  font-size: 100px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  position: relative;
+  z-index: 0;
+  transition: 1s;
+  color: #42464d;
+}
+
+.btn::before, .btn::after {
+  position: absolute;
+  background: #2f3136;
+  z-index: -1;
+  transition: 1s;
+  content: "";
+  border-radius: 10px;
+}
+
+.btn::before {
+  height: 130px;
+  width: 440px;
+  border-radius: 10px;
+}
+
+.btn::after {
+  width: 460px;
+  height: 110px;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn:hover::before {
+  width: 0px;
+  background: #4597a4;
+  color: white;
+  border-radius: 10px;
+}
+
+.btn:hover::after {
+  height: 0px;
+  background: #4597a4;
+  color: white;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background: #4597a4;
+  color: white;
+  border-radius: 10px;
+}
+
+.container {
+  background-color: #42464d;
+  width: 100%;
+  height: 100px;
+}
+
+.titre {
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 140px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 810px) {
+  .btn {
+    font-family: "Fira Sans", sans-serif;
+    width: 260px;
+    height: 80px;
+    border: 3px solid #42464d;
+    border-radius: 0px;
+    font-size: 70px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    position: relative;
+    z-index: 0;
+    transition: 1s;
+    color: #42464d;
+  }
+  .btn::before, .btn::after {
+    position: absolute;
+    background: #2f3136;
+    z-index: -1;
+    transition: 1s;
+    content: "";
+    border-radius: 10px;
+  }
+  .btn::before {
+    height: 80px;
+    width: 240px;
+    border-radius: 10px;
+  }
+  .btn::after {
+    width: 260px;
+    height: 60px;
+  }
+  .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .btn:hover::before {
+    width: 0px;
+    background: #4597a4;
+    color: white;
+    border-radius: 10px;
+  }
+  .btn:hover::after {
+    height: 0px;
+    background: #4597a4;
+    color: white;
+    border-radius: 10px;
+  }
+  .btn:hover {
+    background: #4597a4;
+    color: white;
+    border-radius: 10px;
+  }
+  .container {
+    background-color: #42464d;
+    width: 100%;
+    height: 100px;
+  }
+  .titre {
+    color: white;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 80px;
+    margin-top: 100px;
+    text-align: center;
+  }
+}/*# sourceMappingURL=bonjour.css.map */
